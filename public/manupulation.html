@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="./final_data.js"></script>
+  </head>
+  <body>
+	<p id="current"></p>
+	<script> 
+	function GetSortOrder(prop) {  
+		return function(a, b) {  
+			if (a[prop] > b[prop]) {  
+				return 1;  
+			} else if (a[prop] < b[prop]) {  
+				return -1;  
+			}  
+			return 0;
+		}
+	}
+	var new_data=[];
+	for(var x in data){
+		/*var c=0;
+		if((2020-data[x]["year_of_establishment"])>30){
+			c+=1;
+		}
+		if(data[x]["student_hostel_available"]=="TRUE"){
+			c+=1;
+		}
+		if(data[x]["specialized"]=="TRUE"){
+			c+=1;
+		}
+		if(data[x]["opportunity_cell"]=="TRUE"){
+			c+=1;
+		}
+		if(data[x]["cafeteria"]=="TRUE"){
+			c+=1;
+		}
+		if(data[x]["opportunity_cell"]=="TRUE"){
+			c+=1;
+		}
+		if(data[x]["laboratory"]=="TRUE"){
+			c+=1;
+		}
+		if(data[x]["computer_center"]=="TRUE"){
+			c+=1;
+		}
+		if(data[x]["common_room"]=="TRUE"){
+			c+=1;
+		}
+		if(data[x]["indoor_stadium"]=="TRUE"){
+			c+=1;
+		}
+		if(data[x]["conference_hall"]=="TRUE"){
+			c+=1;
+		}
+		if(data[x]["health_center"]=="TRUE"){
+			c+=1;
+		}
+		if(data[x]["grievance_redressal_mechanism"]=="TRUE"){
+			c+=1;
+		}
+		if(data[x]["library"]=="TRUE"){
+			c+=1;
+		}
+		if(data[x]["playground"]=="TRUE"){
+			c+=1;
+		}
+		if(data[x]["auditorium"]=="TRUE"){
+			c+=1;
+		}
+		if(data[x]["campus_friendly"]=="TRUE"){
+			c+=1;
+		}
+		if(data[x]["separate_room_for_girls"]=="TRUE"){
+			c+=1;
+		}
+		if(data[x]["hostel_count"]>1){
+			c+=1;
+		}
+		if(data[x]["location"]=="U"){
+			c+=1;
+		}
+		if(data[x]["teaching_staff"]>25){
+			c+=1;
+		}
+		if(data[x]["teaching_staff"]>50){
+			if((data[x]["teaching_staff"]/50)>10){
+			c+=10;
+			}else{
+			c+=data[x]["teaching_staff"]/50;
+			}
+		}
+		data[x]["marks"]=c;
+		console.log(data[x]["marks"]+'-'+data[x]["name"])*/
+		new_data.push({n:data[x]["name"],s:data[x]["speciality"],st:data[x]["state"],m:data[x]["marks"],d:data[x]["district"],c:data[x]["city"]})
+	}
+	console.log(JSON.stringify(new_data,null,2));
+	</script>
+  </body>
+</html>
